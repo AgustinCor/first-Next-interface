@@ -1,9 +1,12 @@
+import { Suspense } from "react";
 import { ListOfPosts } from "./[id]/ListOfPosts.jsx";
 
 export default async function PostsPage ({params}){
     return(
         <section>
-          <ListOfPosts />
+     
+            <ListOfPosts />
+   
         </section>
     )
 }

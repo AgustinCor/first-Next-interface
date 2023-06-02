@@ -1,6 +1,11 @@
-import { Navigation } from "../components/Navigation"
-
 import '../styles/globals.css'
+import { Navigation } from "../components/Navigation"
+import {Space_Grotesk} from '@next/font/google'
+
+const font =Space_Grotesk({
+  weight: ['400','700'],
+  subsets:['latin']
+})
 
 export default function RootLayout({ children }) {
  return (
@@ -8,7 +13,7 @@ export default function RootLayout({ children }) {
       <head>
           <title>My first next 13 app</title>
       </head>
-      <body>
+      <body className={font.className}>
         <Navigation/>
         {children}
       </body>

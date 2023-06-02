@@ -1,8 +1,6 @@
-import Link from "next/link"
-import { comment } from "postcss"
+import Image from "next/image"
+const fetchComments =async (id) =>{
 
-const fetchComments = (id) =>{
-    
         return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`,{
           next:{
             revalidate:60
@@ -16,9 +14,10 @@ export default async function Post ({params}){
     const comments =await fetchComments(id)
 
     return (
-      <ul>
+      <ul style={{ background:'#888',fontSize:'10px'}}>
         {comments.map(comment =>(
             <li key={comment.id}>
+               <Image width='50' height='50' src={`https://api.dicebear.com/6.x/lorelei/svg`} alt="wasap" />
                 <h2>{comment.name}</h2>
                 <p>{comment.body}</p>
            </li>
